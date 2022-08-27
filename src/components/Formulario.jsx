@@ -1,12 +1,19 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import usePokemon from "../hooks/usePokemon"
+
 import Errorlog from "./Errorlog"
 //import db from "../db/db.js"
 
 const Formulario = () => {
 
+    const {getDataApi} = usePokemon()
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState(false)
+
+    const navigate = useNavigate()
 
     const user = {
         email: "user@mail.com",
@@ -15,8 +22,8 @@ const Formulario = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(email, password)
-        //console.log(db)
+        // console.log(email, password)
+       
         if([email, password].includes("")) {
             setError(true)
             return
@@ -26,6 +33,9 @@ const Formulario = () => {
             alert("Bienvenido")
             setEmail("")
             setPassword("")
+            navigate("/home")
+            getDataApi()
+            
         }
         else {
             alert("Datos incorrectos")
@@ -71,15 +81,15 @@ const Formulario = () => {
                 </div>
               </div>
               <div>
-                <a className="text-xs text-right pr-5 mb-5 font-semibold " href="">
+                <Link className="text-xs text-right pr-5 mb-5 font-semibold " to="/forgotPassoword">
                      <p className="text-xs text-right pr-5 mb-5 font-semibold ">Forgot password?</p>
-                </a>
+                </Link>
                
               </div>
               <button
                 type="subtmit"
-                className=" bg-green-400 p-3 mt-5
-                 w-full font-semibold  hover:bg-green-500 rounded-sm"
+                className=" bg-red-400 p-3 mt-5
+                 w-full font-semibold  hover:bg-red-500 hover:text-white rounded-sm"
               >
                 Login
               </button>

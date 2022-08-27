@@ -5,7 +5,7 @@ const LoginContainer = () => {
   return (
     <div className=" ">
       <div className="flex h-screen w-screen relative ">
-        <div className="bg-white sm:w-1/3 w-full  sm:bg-green-400"></div>
+        <div className="bg-white sm:w-1/3 w-full  sm:bg-red-400"></div>
         <div className=" w-full "></div>
 
         <div
@@ -13,7 +13,7 @@ const LoginContainer = () => {
        bg-transparent shadow-2xl rounded-lg sm:right-20 sm:left-12 md:right-20 md:left-20 xl:left-24 2xl:left-32 "
         >
           <div className="flex flex-col h-full w-full sm:flex-row sm:h-full sm:w-full ">
-            <div className=" sm:w-1/5 sm:h-full h-1/5 sm:bg-transparent bg-green-400  ">
+            <div className=" sm:w-1/5 sm:h-full h-1/5 sm:bg-transparent bg-red-400  ">
               <img
                 src={img}
                 alt="Logo"
