@@ -1,10 +1,11 @@
 import img from "../img/pokebola.png";
 import ItemContainerPokemon from "./ItemContainerPokemon";
 import usePokemon from "../hooks/usePokemon"
+import Modal from "./Modal";
 
 const ItemListContainer = () => {
 
-    const {pokelist} = usePokemon()
+    const {pokelist,pokemonModal} = usePokemon()
 
   return (
     <div className="bg-red-400">
@@ -20,9 +21,11 @@ const ItemListContainer = () => {
           <ItemContainerPokemon key={pokemon.id} pokemon={pokemon}/>
         ))
       }
-       
-
+              
         </div>
+
+        <Modal></Modal>
+        
         </div>
       
 

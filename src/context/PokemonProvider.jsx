@@ -1,13 +1,28 @@
-import { createContext, useState } from "react";
+import { createContext, useState,useEffect } from "react";
+
 
 const PokemonContext = createContext();
 
 export const PokemonProvider = ({ children }) => {
+
+  const [loginOk, setLoginOk] = useState(false);
+  
+  const [pokelist, setPokelist] = useState([])
+
+  const [open, setOpen] = useState(false)
+
+  const [pokemonModal, setPokemonModal] = useState([])
+
+ useEffect(() => {
+  
+  if (loginOk) {
+    
+    console.log("loginOk")
+
+  }
   
 
-  const [pokemons, setPokemons] = useState("");
-
-  const [pokelist, setPokelist] = useState([])
+ }, [loginOk])
  
 
   const getDataApi = async () => {
@@ -19,7 +34,7 @@ export const PokemonProvider = ({ children }) => {
       const getData = await fetch(url)
       const data = await getData.json()
        // console.log(data.results)
-        setPokemons(data.results)
+       // setPokemons(data.results)
       
       const createPokemonObject = (result) => {
         result.forEach(async (pokemon) => {
@@ -37,14 +52,21 @@ export const PokemonProvider = ({ children }) => {
     }
   };
 
+  const deletePokemon = (id) => {
+    setPokelist(pokelist.filter((pokemon) => pokemon.id !== id));
+
+  }
  
   return (
     <PokemonContext.Provider
       value={{
-        
-        setPokemons,
+        open,setOpen,
+        setLoginOk,
         getDataApi,
-        pokelist
+        pokelist,
+        pokemonModal,
+        setPokemonModal,
+        deletePokemon
       }}
     >
       {children}

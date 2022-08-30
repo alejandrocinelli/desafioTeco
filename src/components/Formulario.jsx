@@ -7,7 +7,7 @@ import Errorlog from "./Errorlog"
 
 const Formulario = () => {
 
-    const {getDataApi} = usePokemon()
+    const {getDataApi,setLoginOk} = usePokemon()
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -35,6 +35,7 @@ const Formulario = () => {
             setPassword("")
             navigate("/home")
             getDataApi()
+            setLoginOk(true)
             
         }
         else {
