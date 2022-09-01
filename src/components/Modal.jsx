@@ -2,17 +2,13 @@ import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import usePokemon from "../hooks/usePokemon"
 
-
 export default function Modal({}) {
-
- // const [open, setOpen] = useState(true)
-
-    const {open,setOpen,pokemonModal,deletePokemon} = usePokemon()
+ 
+  const {open,setOpen,pokemonModal,deletePokemon} = usePokemon()
 
   const cancelButtonRef = useRef(null)
 
   return (
-
 
     open && (
 
@@ -61,11 +57,18 @@ export default function Modal({}) {
                     </div>
                   </div>
                 </div>
-                <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row sm:justify-end sm:px-6">
                   <button
                     type="button"
                     className="inline-flex w-full mt-3 justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
-                    onClick={() => setOpen(false)}
+                    onClick={() => {setOpen(false)
+                   // fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonModal.id}`, {
+                     // method:'PUT',
+                     // body:JSON.stringify(pokemonModal),
+                     // headers:{"Content-Type": "application/json"}})
+                     // .then(res => res.json())
+                     // .then(data => console.log(data))
+                    }}
                   >
                     Editar
                   </button>

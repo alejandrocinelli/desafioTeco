@@ -1,17 +1,16 @@
-import { useState, useContext } from "react"
+import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import usePokemon from "../hooks/usePokemon"
-
 import Errorlog from "./Errorlog"
-//import db from "../db/db.js"
+import swal from 'sweetalert';
 
 const Formulario = () => {
 
-    const {getDataApi,setLoginOk} = usePokemon()
+    const {getDataApi, error,setError} = usePokemon()
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [error, setError] = useState(false)
+   // const [error, setError] = useState(false)
 
     const navigate = useNavigate()
 
@@ -22,7 +21,7 @@ const Formulario = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // console.log(email, password)
+       
        
         if([email, password].includes("")) {
             setError(true)
@@ -30,12 +29,13 @@ const Formulario = () => {
         }
         setError(false)
         if(email === user.email && password=== user.password) {
-            alert("Bienvenido")
+            
             setEmail("")
             setPassword("")
+            swal("Bienvenido", ` ${email}`, "success");
             navigate("/home")
             getDataApi()
-            setLoginOk(true)
+           
             
         }
         else {

@@ -1,11 +1,9 @@
 import { createContext, useState,useEffect } from "react";
 
-
 const PokemonContext = createContext();
 
 export const PokemonProvider = ({ children }) => {
 
-  const [loginOk, setLoginOk] = useState(false);
   
   const [pokelist, setPokelist] = useState([])
 
@@ -13,16 +11,8 @@ export const PokemonProvider = ({ children }) => {
 
   const [pokemonModal, setPokemonModal] = useState([])
 
- useEffect(() => {
-  
-  if (loginOk) {
-    
-    console.log("loginOk")
-
-  }
-  
-
- }, [loginOk])
+  const [error, setError] = useState(false)
+  // borrar cualquier cosa
  
 
   const getDataApi = async () => {
@@ -61,7 +51,7 @@ export const PokemonProvider = ({ children }) => {
     <PokemonContext.Provider
       value={{
         open,setOpen,
-        setLoginOk,
+        error, setError,
         getDataApi,
         pokelist,
         pokemonModal,

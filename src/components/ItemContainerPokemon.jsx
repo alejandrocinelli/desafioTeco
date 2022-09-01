@@ -4,10 +4,12 @@ import usePokemon from "../hooks/usePokemon"
 const ItemContainerPokemon = ({ pokemon }) => {
 
   const {open,setOpen,setPokemonModal} = usePokemon()
+
+
   return (
     <>
       <div className="bg-gradient-to-r from-red-100 to-red-300  p-5 m-3 h-84 w-64 rounded-md shadow-2xl">
-      
+   
         <div className="flex justify-between">
           <p className="uppercase font-bold text-lg">{pokemon.name}</p>
           <p className=" font-medium ">
