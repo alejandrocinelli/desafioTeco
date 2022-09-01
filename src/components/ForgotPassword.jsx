@@ -9,7 +9,7 @@ import swal from 'sweetalert';
 const ForgotPassword = () => {
 
   const navigate = useNavigate();
-  const {error, setError} = usePokemon()
+  const {error, setError } = usePokemon()
 
   const [email, setEmail] = useState("");
 

@@ -39,7 +39,7 @@ const Formulario = () => {
             
         }
         else {
-            alert("Datos incorrectos")
+            swal("Error", "Usuario o contraseña incorrectos", "error");
         }
     }
 

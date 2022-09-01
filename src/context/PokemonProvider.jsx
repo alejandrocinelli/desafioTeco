@@ -56,7 +56,8 @@ export const PokemonProvider = ({ children }) => {
         pokelist,
         pokemonModal,
         setPokemonModal,
-        deletePokemon
+        deletePokemon,
+        setPokelist
       }}
     >
       {children}
