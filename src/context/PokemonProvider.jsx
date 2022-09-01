@@ -12,20 +12,16 @@ export const PokemonProvider = ({ children }) => {
   const [pokemonModal, setPokemonModal] = useState([])
 
   const [error, setError] = useState(false)
-  // borrar cualquier cosa
- 
-
+  
   const getDataApi = async () => {
     
     try {
-     // console.log("llamar a la api entro joya el pibe");
+   
       const url = "https://pokeapi.co/api/v2/pokemon?limit=20";
 
       const getData = await fetch(url)
       const data = await getData.json()
-       // console.log(data.results)
-       // setPokemons(data.results)
-      
+            
       const createPokemonObject = (result) => {
         result.forEach(async (pokemon) => {
           const url = pokemon.url;
