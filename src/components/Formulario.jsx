@@ -82,9 +82,12 @@ const Formulario = () => {
                 </div>
               </div>
               <div>
-                <Link className="text-xs text-right pr-5 mb-5 font-semibold " to="/forgotPassoword">
-                     <p className="text-xs text-right pr-5 mb-5 font-semibold ">Forgot password?</p>
+                <div className=" pt-2 flex justify-end">
+                   <Link className="mr-2 mb-5 font-semibold" to="/forgotPassoword">
+                     <p className="text-xs font-semibold ">Forgot password?</p>
                 </Link>
+                </div>
+               
                
               </div>
               <button
