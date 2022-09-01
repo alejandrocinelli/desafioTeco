@@ -9,11 +9,12 @@ const LoginContainer = () => {
         <div className=" w-full "></div>
 
         <div
-          className="h-4/5 absolute inset-0 top-20 align-middle
-       bg-transparent shadow-2xl rounded-lg sm:right-20 sm:left-12 md:right-20 md:left-20 xl:left-24 2xl:left-32 "
+          className="sm:h-4/5 h-full absolute inset-0 top-20 align-middle
+       bg-transparent shadow-2xl rounded-lg sm:right-20 sm:left-12 md:right-20 
+       md:left-20  xl:left-24 2xl:left-32 "
         >
-          <div className="flex flex-col h-full w-full sm:flex-row sm:h-full sm:w-full ">
-            <div className=" sm:w-1/5 sm:h-full h-1/5 sm:bg-transparent bg-red-400  ">
+          <div className="container flex flex-col h-full w-full sm:flex-row sm:h-full sm:w-full ">
+            <div className=" sm:w-1/5 sm:h-full h-auto sm:bg-transparent bg-red-400  ">
               <img
                 src={img}
                 alt="Logo"

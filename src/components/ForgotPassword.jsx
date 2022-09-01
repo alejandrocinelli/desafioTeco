@@ -40,7 +40,7 @@ const ForgotPassword = () => {
             md:right-20 md:left-20 xl:left-24 2xl:left-32 "
           >
             <div className="flex flex-col h-full w-full sm:flex-row sm:h-full sm:w-full ">
-              <div className=" sm:w-1/5 sm:h-full h-1/5 sm:bg-transparent bg-red-400  ">
+              <div className=" sm:w-1/5 sm:h-full h-1/4 sm:bg-transparent bg-red-400  ">
                 <img
                   src={img}
                   alt="Logo"
@@ -89,7 +89,7 @@ const ForgotPassword = () => {
 
                           <button
                             type="subtmit"
-                            className=" bg-red-400 p-3 mt-5
+                            className=" bg-red-400 p-2 mt-5
                         w-full font-semibold  hover:bg-red-500 hover:text-white rounded-sm"
                           >
                             Reset

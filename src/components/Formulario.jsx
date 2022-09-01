@@ -47,9 +47,9 @@ const Formulario = () => {
     <>
      <div className="">
         <p className="text-xs text-right pr-5 font-semibold mt-3">Need Help?</p>
-        <div className="container mt-10">
+        <div className="container mt-8">
           <p className="font-bold text-center">Log in</p>
-          <div className="flex pt-20 xl:px-10 md:px-7">
+          <div className="flex pt-16 xl:px-10 md:px-7">
             <form
               onSubmit={handleSubmit}
               className="bg-transparent py-5 px-5 text-sm font-bold w-full"
@@ -92,7 +92,7 @@ const Formulario = () => {
               </div>
               <button
                 type="subtmit"
-                className=" bg-red-400 p-3 mt-5
+                className=" bg-red-400 p-2 mt-0
                  w-full font-semibold  hover:bg-red-500 hover:text-white rounded-sm"
               >
                 Login
